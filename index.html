@@ -1,0 +1,197 @@
+<html>
+ <head>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+<nav class="navbar navbar-default">
+  <button type="button" data-mod="digital" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> LN Digital</button> 
+   <a href="hub.html" ><button type="button" data-mod="hub" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> LN HUB32IO</button></a>
+  <button type="button" data-mod="io" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span> LN IO</button>
+</nav>
+
+<div id='digital'>
+<h3>Output</h3>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="100" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="101" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="102" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="103" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="104" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="105" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="106" data-state="1"></button>
+ <button type="button" class="GPIO btn btn-primary btn-lg" data-pin="107" data-state="1"></button>
+ <br>
+<h3>Input</h3>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="108" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="109" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="110" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="111" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="112" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="113" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="114" data-state="1"></button>
+ <button type="button" class="btn btn-default btn-lg" disabled="disabled" data-pin="115" data-state="1"></button>
+
+
+</div>
+
+<div id='hub' style="display: none;">
+<h3>Module A</h3>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="120" data-state="1" id="20-120"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="121" data-state="1" id="20-121"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="122" data-state="1" id="20-122"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="123" data-state="1" id="20-123"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="124" data-state="1" id="20-124"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="125" data-state="1" id="20-125"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="126" data-state="1" id="20-126"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="127" data-state="1" id="20-127"></button>
+<br />
+<br />
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="128" data-state="1" id="20-128"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="129" data-state="1" id="20-129"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="130" data-state="1" id="20-130"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="131" data-state="1" id="20-131"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="132" data-state="1" id="20-132"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="133" data-state="1" id="20-133"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="134" data-state="1" id="20-134"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="20" data-pin="135" data-state="1" id="20-135"></button>
+
+<h3>Module B</h3>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="120" data-state="1" id="21-120"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="121" data-state="1" id="21-121"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="122" data-state="1" id="21-122"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="123" data-state="1" id="21-123"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="124" data-state="1" id="21-124"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="125" data-state="1" id="21-125"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="126" data-state="1" id="21-126"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="127" data-state="1" id="21-127"></button>
+<br />
+<br />
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="128" data-state="1" id="21-128"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="129" data-state="1" id="21-129"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="130" data-state="1" id="21-130"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="131" data-state="1" id="21-131"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="132" data-state="1" id="21-132"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="133" data-state="1" id="21-133"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="134" data-state="1" id="21-134"></button>
+ <button type="button" class="GPIO2 btn btn-primary btn-lg" data-adres="21" data-pin="135" data-state="1" id="21-135"></button>
+  
+</div>
+
+<div id='io' style="display: none;">
+<h3>LN IO</h3>
+
+</div>
+
+
+
+<script>
+
+  var e = document.getElementsByClassName('btn');
+
+//console.log(e);
+  $('.navbar-btn').click(function() {
+    $('#digital,#hub,#io').hide();
+    $('#'+$(this).attr('data-mod')).show();
+
+    return false;
+  });    
+
+
+
+  var socket = io('http://192.168.1.114');
+
+  socket.emit('getStatus', {pin: 100});
+  socket.emit('getStatus', {pin: 101});
+  socket.emit('getStatus', {pin: 102});
+  socket.emit('getStatus', {pin: 103});
+  socket.emit('getStatus', {pin: 104});
+  socket.emit('getStatus', {pin: 105});
+  socket.emit('getStatus', {pin: 106});
+  socket.emit('getStatus', {pin: 107});
+
+  socket.emit('getStatusHub', {pin: 120, adres: 20});
+  socket.emit('getStatusHub', {pin: 121, adres: 20});
+  socket.emit('getStatusHub', {pin: 122, adres: 20});
+  socket.emit('getStatusHub', {pin: 123, adres: 20});
+  socket.emit('getStatusHub', {pin: 124, adres: 20});
+  socket.emit('getStatusHub', {pin: 125, adres: 20});
+  socket.emit('getStatusHub', {pin: 126, adres: 20});
+  socket.emit('getStatusHub', {pin: 127, adres: 20});
+  socket.emit('getStatusHub', {pin: 128, adres: 20});
+  socket.emit('getStatusHub', {pin: 129, adres: 20});
+  socket.emit('getStatusHub', {pin: 130, adres: 20});
+  socket.emit('getStatusHub', {pin: 131, adres: 20});
+  socket.emit('getStatusHub', {pin: 132, adres: 20});
+  socket.emit('getStatusHub', {pin: 133, adres: 20});
+  socket.emit('getStatusHub', {pin: 134, adres: 20});
+  socket.emit('getStatusHub', {pin: 135, adres: 20});
+
+  socket.emit('getStatusHub', {pin: 120, adres: 21});
+  socket.emit('getStatusHub', {pin: 121, adres: 21});
+  socket.emit('getStatusHub', {pin: 122, adres: 21});
+  socket.emit('getStatusHub', {pin: 123, adres: 21});
+  socket.emit('getStatusHub', {pin: 124, adres: 21});
+  socket.emit('getStatusHub', {pin: 125, adres: 21});
+  socket.emit('getStatusHub', {pin: 126, adres: 21});
+  socket.emit('getStatusHub', {pin: 127, adres: 21});
+  socket.emit('getStatusHub', {pin: 128, adres: 21});
+  socket.emit('getStatusHub', {pin: 129, adres: 21});
+  socket.emit('getStatusHub', {pin: 130, adres: 21});
+  socket.emit('getStatusHub', {pin: 131, adres: 21});
+  socket.emit('getStatusHub', {pin: 132, adres: 21});
+  socket.emit('getStatusHub', {pin: 133, adres: 21});
+  socket.emit('getStatusHub', {pin: 134, adres: 21});
+  socket.emit('getStatusHub', {pin: 135, adres: 21});
+   
+
+  socket.on('status', function(o) { 
+   $('[data-pin="'+o.pin+'"]').text(o.status.trim() == '1' ? 'On' : 'Off').attr('data-state', o.status.trim()); 
+  });
+
+  $('.GPIO').click(function() {
+    var status;
+
+    if ('1' == $(this).attr('data-state').trim()) {
+      status=0;
+    } else {
+      status=1;
+    }
+var d = {state: status, pin: parseInt($(this).attr('data-pin'))}
+console.log(d);
+
+    socket.emit('setGPIO', d);
+  });
+  
+ 
+
+    socket.on('status2', function(o) {
+console.log(o); 
+   $('#'+o.adres+'-'+o.pin).text(o.status2.trim() == '1' ? 'On' : 'Off').attr('data-state', o.status2.trim()); 
+  });
+
+
+  $('.GPIO2').click(function() {
+    var status2;
+
+    if ('1' == $(this).attr('data-state').trim()) {
+      status2=0;
+    } else {
+      status2=1;
+    }
+var d2 = {state: status2, pin: parseInt($(this).attr('data-pin')), adres: parseInt($(this).attr('data-adres'))}
+console.log(d2);
+
+    socket.emit('setGPIOHub', d2);
+  });
+
+
+</script>
+
+
+
+ </body>
+</html>
+ 
